@@ -2,7 +2,7 @@
 const MenuItem = () => {
 
   return (
-    <div className="p-5 shadow-lg w-48">
+    <div className="p-6 shadow-lg w-48 divide-y-2">
       <ul>      
         <li>Home</li>
         <li>Shorts</li>
