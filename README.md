@@ -10,3 +10,4 @@
     - Fetch Api
     - set video card for 50 video and map it
     - setup routing
+    - create watch page

@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 
 const MenuItem = () => {
 
   return (
     <div className="p-6 shadow-lg w-48 divide-y-2">
       <ul>      
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
         <li>Shorts</li>
         <li>Subcriptions</li>
       </ul>
