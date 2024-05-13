@@ -3,9 +3,27 @@ import YouTubeLogo from "../static/YouTubeLogo.png";
 import userIcon from "../static/userIcon.png";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/store/appSlice";
+import { useEffect, useState } from "react";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 const Header = () => {
-  const dispatch =useDispatch();
+  const [searchQuery, setSearchQuery] = useState("");
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [searchQuery])
+  
+  const getSearchSuggestions = async() => {
+    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const json = await data.json();
+    console.log(json);
+  }
 
   const toggleMenuHandler =()=> {
     dispatch(toggleMenu());
@@ -18,7 +36,8 @@ const Header = () => {
       <img alt="Youtube Logo" src={YouTubeLogo} className=" h-8 mx-2"/>
     </div>
     <div className=" col-span-10 px-10">
-      <input type="text" placeholder="Search" className="w-1/2 border border-gray-400 p-2 rounded-l-full"/>
+        <input type="text" placeholder="Search" className="w-1/2 border border-gray-400 p-2 rounded-l-full"
+          value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
       <button className="border border-gray-400 py-2 px-5  rounded-r-full">🔍</button>
     </div>
     <div>

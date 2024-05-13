@@ -12,3 +12,5 @@
     - setup routing
     - create watch page
     - Higher Order Component
+    - Search
+    -- debouncing
