@@ -35,10 +35,17 @@ const Header = () => {
       <img onClick={()=>toggleMenuHandler()} alt="menu logo" src={hamburgerMenu} className=" h-8" />
       <img alt="Youtube Logo" src={YouTubeLogo} className=" h-8 mx-2"/>
     </div>
-    <div className=" col-span-10 px-10">
-        <input type="text" placeholder="Search" className="w-1/2 border border-gray-400 p-2 rounded-l-full"
+      <div className=" col-span-10 px-10">
+        <div>
+        <input type="text" placeholder="Search" className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
           value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-      <button className="border border-gray-400 py-2 px-5  rounded-r-full">🔍</button>
+          <button className="border border-gray-400 py-2 px-5  rounded-r-full">🔍</button>
+        </div>
+        <div className="fixed bg-white py-2 px-5 w-[37rem] rounded-lg shadow-lg border border-gray-100 ">
+          <ul>
+            <li className="px-3 py-2 shadow-sm hover:bg-gray-100">🔍 Iphone</li>
+          </ul>
+        </div>
     </div>
     <div>
       <img alt="user icon" src={userIcon} className=" col-span-1 h-10"/>

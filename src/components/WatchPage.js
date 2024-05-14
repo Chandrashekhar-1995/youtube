@@ -12,7 +12,7 @@ const WatchPage = () => {
     dispatch(closeMenu())
   },[])
   return (
-    <div className='px-5'>
+    <div className='p-5'>
       <iframe
         width="1200"
         height="600"
