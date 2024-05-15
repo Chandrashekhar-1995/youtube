@@ -14,3 +14,4 @@
     - Higher Order Component
     - Search
     -- debouncing
+    -- set search bar

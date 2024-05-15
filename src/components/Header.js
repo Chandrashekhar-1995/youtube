@@ -9,6 +9,7 @@ import { clear } from "@testing-library/user-event/dist/clear";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -22,7 +23,8 @@ const Header = () => {
   const getSearchSuggestions = async() => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
+    setSuggestions(json[1])
   }
 
   const toggleMenuHandler =()=> {
@@ -43,7 +45,8 @@ const Header = () => {
         </div>
         <div className="fixed bg-white py-2 px-5 w-[37rem] rounded-lg shadow-lg border border-gray-100 ">
           <ul>
-            <li className="px-3 py-2 shadow-sm hover:bg-gray-100">🔍 Iphone</li>
+            {suggestions.map(s=><li key={s} className="px-3 py-2 shadow-sm hover:bg-gray-100">🔍 {s}</li>)}
+            
           </ul>
         </div>
     </div>
