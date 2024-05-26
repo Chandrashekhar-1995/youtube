@@ -22,3 +22,4 @@
     - Live Chat
     -- Live chat >>> Infinite Scroll >>> Pagination
     -- use redux for live chat
+    -- auto scroll and delete chat after 25 chat
