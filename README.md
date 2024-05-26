@@ -21,3 +21,4 @@
     -- expande comment
     - Live Chat
     -- Live chat >>> Infinite Scroll >>> Pagination
+    -- use redux for live chat
